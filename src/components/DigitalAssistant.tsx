@@ -44,7 +44,7 @@ const DigitalAssistant: React.FC<DigitalAssistantProps> = ({
       className="digital-assistant-card"
       style={{
         textAlign: 'center',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #87ceeb 0%, #b0e0e6 100%)',
         border: 'none',
         borderRadius: '16px',
         color: 'white'
