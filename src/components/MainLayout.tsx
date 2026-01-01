@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Row, Col, Typography } from 'antd';
+import { Layout, Row, Col, Typography, Grid } from 'antd';
 import DigitalAssistant from './DigitalAssistant';
 import ChatPanel from './ChatPanel';
 import QuickServices from './QuickServices';
@@ -8,10 +8,12 @@ import type { AssistantStatus } from '../types';
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
 const MainLayout: React.FC = () => {
   const { messages, sendMessage, loading } = useChat();
   const [assistantStatus, setAssistantStatus] = useState<AssistantStatus>('idle');
+  const screens = useBreakpoint();
 
   // 根据loading状态更新数字人状态
   useEffect(() => {
@@ -86,7 +88,7 @@ const MainLayout: React.FC = () => {
               />
               
               {/* 快捷服务在桌面端显示在数字人下方 */}
-              <div style={{ marginTop: '24px', display: window.innerWidth >= 992 ? 'block' : 'none' }}>
+              <div style={{ marginTop: '24px', display: screens.lg ? 'block' : 'none' }}>
                 <QuickServices onServiceClick={handleServiceClick} />
               </div>
             </div>
@@ -95,7 +97,7 @@ const MainLayout: React.FC = () => {
           <Col xs={24} lg={16}>
             <div style={{ height: '600px', display: 'flex', flexDirection: 'column' }}>
               {/* 移动端：快捷服务显示在聊天面板上方 */}
-              <div style={{ display: window.innerWidth < 992 ? 'block' : 'none', marginBottom: '16px' }}>
+              <div style={{ display: !screens.lg ? 'block' : 'none', marginBottom: '16px' }}>
                 <QuickServices onServiceClick={handleServiceClick} />
               </div>
               
