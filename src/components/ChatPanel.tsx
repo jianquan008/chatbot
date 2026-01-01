@@ -135,9 +135,8 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="输入您的问题..."
-            autoSize={{ minRows: 1, maxRows: 3 }}
             disabled={loading}
-            style={{ resize: 'none' }}
+            style={{ resize: 'none', height: '40px' }}
           />
           <Button
             type="primary"
