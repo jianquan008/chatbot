@@ -93,11 +93,24 @@ const DigitalAssistant: React.FC<DigitalAssistantProps> = ({
         </div>
       </div>
 
-      <Title level={3} style={{ color: 'white', marginBottom: '8px' }}>
+      <Title level={3} style={{ 
+        color: 'white', 
+        marginBottom: '8px',
+        backgroundColor: 'rgba(135, 206, 235, 0.3)',
+        padding: '8px 16px',
+        borderRadius: '8px'
+      }}>
         小鹏Iron
       </Title>
       
-      <Text style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '16px' }}>
+      <Text style={{ 
+        color: 'rgba(255, 255, 255, 0.8)', 
+        fontSize: '16px',
+        backgroundColor: 'rgba(135, 206, 235, 0.3)',
+        padding: '4px 12px',
+        borderRadius: '6px',
+        display: 'inline-block'
+      }}>
         数字人员工
       </Text>
       
@@ -106,7 +119,11 @@ const DigitalAssistant: React.FC<DigitalAssistantProps> = ({
           style={{ 
             color: statusConfig.color === '#666' ? 'rgba(255, 255, 255, 0.6)' : statusConfig.color,
             fontSize: '14px',
-            fontWeight: 500
+            fontWeight: 500,
+            backgroundColor: 'rgba(135, 206, 235, 0.3)',
+            padding: '4px 12px',
+            borderRadius: '6px',
+            display: 'inline-block'
           }}
         >
           {statusConfig.text}

@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 把整体风格的颜色改为浅蓝色
+- **Feature 名称**: 把左侧文字小鹏Iron数字人员工待机中的
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto
