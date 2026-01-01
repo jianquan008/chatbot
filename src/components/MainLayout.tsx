@@ -63,7 +63,13 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <Layout style={{ minHeight: '100vh', background: '#f5f5f5' }}>
+    <Layout style={{ 
+      width: '100%',
+      maxWidth: '1280px',
+      minHeight: '100vh', 
+      background: '#f5f5f5',
+      margin: '0 auto'
+    }}>
       <Header style={{ 
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         padding: '0 24px',
