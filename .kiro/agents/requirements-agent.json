@@ -1,0 +1,21 @@
+{
+  "name": "requirements-agent",
+  "description": "需求分析专家，生成 EARS 格式需求文档",
+  "prompt": "file://./requirements-agent.md",
+  "tools": ["thinking", "knowledge", "fs_read", "fs_write", "glob", "grep", "code"],
+  "allowedTools": ["thinking", "knowledge", "fs_read", "fs_write", "glob", "grep", "code"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": [".kiro/specs/**/*.md", ".kiro/steering/**/*.md"],
+      "fallback_action": "deny"
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/specs/**/*.md",
+    "file://.kiro/specs/**/refs/**",
+    "file://package.json"
+  ]
+}

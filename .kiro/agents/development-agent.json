@@ -1,0 +1,30 @@
+{
+  "name": "development-agent",
+  "description": "代码实现专家，根据任务清单实现高质量代码",
+  "prompt": "file://./development-agent.md",
+  "tools": ["thinking", "knowledge", "fs_read", "fs_write", "execute_bash", "glob", "grep", "code"],
+  "allowedTools": ["thinking", "knowledge", "fs_read", "fs_write", "execute_bash", "glob", "grep", "code"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": ["src/**", "public/**", "tests/**", "*.json", "*.md", "*.html", "*.css", "*.js", "*.ts", "*.tsx", "*.jsx", "*.vue", ".kiro/**"],
+      "deniedPaths": [".kiro/steering/**"],
+      "fallback_action": "deny"
+    },
+    "execute_bash": {
+      "allowedCommands": ["pnpm install", "pnpm test", "pnpm run build", "pnpm run lint:js", "pnpm run tsc", "npx", "git status", "git add", "ls", "pwd", "cat", "mkdir"],
+      "deniedCommands": ["rm -rf", "sudo", "chmod 777", "pnpm run dev", "pnpm start", "node server"],
+      "autoAllowReadonly": true,
+      "denyByDefault": true
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/specs/**/*.md",
+    "file://.kiro/templates/ui-standards/**/*.md",
+    "file://.kiro/templates/scaffolds/**",
+    "file://.kiro/specs/**/*.md",
+    "file://.kiro/specs/**/refs/**",
+    "file://package.json"
+  ]
+}

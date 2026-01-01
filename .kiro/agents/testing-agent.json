@@ -1,0 +1,34 @@
+{
+  "name": "testing-agent",
+  "description": "测试验证专家，执行E2E测试并生成测试报告",
+  "prompt": "file://./testing-agent.md",
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--headless", "--isolated"],
+      "timeout": 180000
+    }
+  },
+  "tools": ["thinking", "knowledge", "code", "fs_read", "fs_write", "execute_bash", "grep", "glob", "@chrome-devtools"],
+  "allowedTools": ["thinking", "knowledge", "code", "fs_read", "fs_write", "execute_bash", "grep", "glob", "@chrome-devtools/*"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": [".kiro/tests/**/*.md", ".kiro/tests/**/*.png"],
+      "fallback_action": "deny"
+    },
+    "execute_bash": {
+      "allowedCommands": ["pnpm install", "pnpm run dev", "pnpm run build", "pnpm start", "pkill", "cat", "grep", "sleep", "nohup", "curl", "lsof"],
+      "deniedCommands": ["rm -rf", "sudo", "pkill -f uvicorn"],
+      "autoAllowReadonly": true,
+      "denyByDefault": true
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/testing/**/*.md",
+    "file://.kiro/specs/**/*.md",
+    "file://.kiro/specs/**/refs/**",
+    "file://package.json"
+  ]
+}

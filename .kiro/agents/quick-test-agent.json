@@ -1,0 +1,19 @@
+{
+  "name": "quick-test-agent",
+  "description": "快速测试 Agent，独立测试已有项目（不依赖 spec 文档）",
+  "prompt": "file://./quick-test-agent.md",
+  "tools": ["*"],
+  "allowedTools": ["*"],
+  "toolsSettings": {
+    "execute_bash": {
+      "autoAllowReadonly": true
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/testing/**/*.md",
+    "file://package.json"
+  ]
+}

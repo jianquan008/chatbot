@@ -1,0 +1,20 @@
+{
+  "name": "tasks-agent",
+  "description": "任务分解专家，生成开发任务清单",
+  "prompt": "file://./tasks-agent.md",
+  "tools": ["thinking", "knowledge", "fs_read", "fs_write", "glob", "grep", "code"],
+  "allowedTools": ["thinking", "knowledge", "fs_read", "fs_write", "glob", "grep", "code"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": [".kiro/specs/**/*.md"],
+      "fallback_action": "deny"
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/specs/**/*.md",
+    "file://.kiro/specs/**/*.md",
+    "file://.kiro/specs/**/refs/**"
+  ]
+}

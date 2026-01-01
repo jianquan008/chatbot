@@ -1,0 +1,23 @@
+{
+  "name": "design-agent",
+  "description": "技术设计专家，生成架构设计文档",
+  "prompt": "file://./design-agent.md",
+  "tools": ["thinking", "knowledge", "fs_read", "fs_write", "glob", "grep", "code"],
+  "allowedTools": ["thinking", "knowledge", "fs_read", "fs_write", "glob", "grep", "code"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": [".kiro/specs/**/*.md", ".kiro/steering/**/*.md"],
+      "fallback_action": "deny"
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/specs/**/*.md",
+    "file://.kiro/templates/ui-standards/**/*.md",
+    "file://.kiro/specs/**/refs/**",
+    "file://.kiro/specs/**/*.md",
+    "file://package.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "quick-agent",
+  "description": "快速开发 Agent，适合简单需求（Bug修复、样式调整、小功能）",
+  "prompt": "file://./quick-agent.md",
+  "tools": ["*"],
+  "allowedTools": ["*"],
+  "toolsSettings": {
+    "execute_bash": {
+      "autoAllowReadonly": true
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://README.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/ui-standards/**/*.md",
+    "file://.kiro/templates/scaffolds/**",
+    "file://.kiro/specs/**/refs/**",
+    "file://package.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "review-agent",
+  "description": "项目审查专家，生成项目总结报告",
+  "prompt": "file://./review-agent.md",
+  "tools": ["thinking", "fs_read", "fs_write", "code", "grep", "glob", "knowledge"],
+  "allowedTools": ["thinking", "fs_read", "fs_write", "code", "grep", "glob", "knowledge"],
+  "toolsSettings": {
+    "fs_write": {
+      "allowedPaths": [".kiro/logs/**/*.md"],
+      "fallback_action": "deny"
+    }
+  },
+  "resources": [
+    "file://AGENTS.md",
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/templates/security/**/*.md",
+    "file://.kiro/specs/**/*.md",
+    "file://.kiro/tests/**/*.md",
+    "file://.kiro/specs/**/refs/**"
+  ]
+}
