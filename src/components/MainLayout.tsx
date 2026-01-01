@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Row, Col, Typography, Grid } from 'antd';
+import { Layout, Row, Col, Typography } from 'antd';
 import DigitalAssistant from './DigitalAssistant';
 import ChatPanel from './ChatPanel';
 import QuickServices from './QuickServices';
@@ -8,24 +8,28 @@ import type { AssistantStatus } from '../types';
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
-const { useBreakpoint } = Grid;
 
 const MainLayout: React.FC = () => {
   const { messages, sendMessage, loading } = useChat();
   const [assistantStatus, setAssistantStatus] = useState<AssistantStatus>('idle');
-  const screens = useBreakpoint();
 
   // 根据loading状态更新数字人状态
   useEffect(() => {
     if (loading) {
-      setAssistantStatus('listening');
+      // 使用setTimeout避免同步setState
+      const listenTimer = setTimeout(() => {
+        setAssistantStatus('listening');
+      }, 0);
       
       // 模拟思考过程
-      const timer = setTimeout(() => {
+      const speakTimer = setTimeout(() => {
         setAssistantStatus('speaking');
       }, 1000);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(listenTimer);
+        clearTimeout(speakTimer);
+      };
     } else {
       // 延迟回到idle状态，让用户看到speaking状态
       const timer = setTimeout(() => {
@@ -64,14 +68,16 @@ const MainLayout: React.FC = () => {
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         padding: '0 24px',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        height: '64px'
       }}>
         <Title 
           level={2} 
           style={{ 
             color: 'white', 
             margin: 0,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            fontSize: '24px'
           }}
         >
           小鹏Iron数字助手平台
@@ -79,28 +85,56 @@ const MainLayout: React.FC = () => {
       </Header>
 
       <Content style={{ padding: '24px' }}>
-        <Row gutter={[24, 24]} style={{ height: '100%' }}>
-          {/* 桌面端：左侧数字人，右侧聊天 */}
-          <Col xs={24} lg={8}>
-            <div style={{ position: 'sticky', top: '24px' }}>
-              <DigitalAssistant 
-                status={assistantStatus}
-              />
+        <Row gutter={[24, 24]} style={{ height: 'calc(100vh - 112px)' }}>
+          <Col span={8}>
+            <div style={{ 
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{ flex: '0 0 auto', marginBottom: '24px' }}>
+                <DigitalAssistant 
+                  status={assistantStatus}
+                />
+              </div>
               
-              {/* 快捷服务在桌面端显示在数字人下方 */}
-              <div style={{ marginTop: '24px', display: screens.lg ? 'block' : 'none' }}>
+              <div style={{ 
+                flex: '1 1 auto', 
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
                 <QuickServices onServiceClick={handleServiceClick} />
+              </div>
+
+              {/* XPeng Logo */}
+              <div style={{ 
+                flex: '0 0 auto',
+                marginTop: '16px',
+                padding: '16px',
+                textAlign: 'center',
+                backgroundColor: 'white',
+                borderRadius: '8px',
+                border: '1px solid #f0f0f0'
+              }}>
+                <img 
+                  src="/xpeng-logo.png" 
+                  alt="XPeng" 
+                  style={{ 
+                    height: '48px',
+                    maxWidth: '150px',
+                    objectFit: 'contain'
+                  }} 
+                />
               </div>
             </div>
           </Col>
 
-          <Col xs={24} lg={16}>
-            <div style={{ height: '600px', display: 'flex', flexDirection: 'column' }}>
-              {/* 移动端：快捷服务显示在聊天面板上方 */}
-              <div style={{ display: !screens.lg ? 'block' : 'none', marginBottom: '16px' }}>
-                <QuickServices onServiceClick={handleServiceClick} />
-              </div>
-              
+          <Col span={16}>
+            <div style={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column'
+            }}>
               <div style={{ flex: 1 }}>
                 <ChatPanel
                   messages={messages}

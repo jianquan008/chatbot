@@ -21,16 +21,30 @@ const iconMap = {
 
 const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {
   return (
-    <Card title="快捷服务" style={{ marginBottom: '16px' }}>
-      <Row gutter={[12, 12]}>
+    <Card 
+      title="快捷服务" 
+      style={{ 
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+      bodyStyle={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '16px'
+      }}
+    >
+      <Row gutter={[12, 12]} style={{ flex: 1 }}>
         {mockServices.map((service) => (
-          <Col xs={12} sm={8} md={6} key={service.id}>
+          <Col span={6} key={service.id}>
             <Button
               type="default"
               size="large"
               onClick={() => onServiceClick(service.id)}
               style={{
                 width: '100%',
+                minHeight: '100px',
                 height: 'auto',
                 padding: '12px 8px',
                 display: 'flex',
@@ -39,7 +53,9 @@ const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {
                 justifyContent: 'center',
                 border: '1px solid #d9d9d9',
                 borderRadius: '8px',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                whiteSpace: 'normal',
+                wordWrap: 'break-word'
               }}
               className="service-button"
             >
@@ -71,7 +87,10 @@ const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {
                   fontSize: '12px',
                   textAlign: 'center',
                   marginTop: '4px',
-                  lineHeight: '1.2'
+                  lineHeight: '1.3',
+                  display: 'block',
+                  wordBreak: 'break-word',
+                  overflow: 'hidden'
                 }}
               >
                 {service.description}

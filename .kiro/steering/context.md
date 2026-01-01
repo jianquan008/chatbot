@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 小鹏Iron数字助手平台这里显示不正常
+- **Feature 名称**: 把小鹏的Logo图片放大一些
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto

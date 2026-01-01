@@ -9,6 +9,7 @@ const DigitalAssistant: React.FC<DigitalAssistantProps> = ({
   status = 'idle', 
   avatar 
 }) => {
+  
   // 根据状态获取图标和颜色
   const getStatusConfig = () => {
     switch (status) {
@@ -58,7 +59,7 @@ const DigitalAssistant: React.FC<DigitalAssistantProps> = ({
           }}
         >
           <Avatar
-            size={120}
+            size={100}
             src={avatar}
             icon={!avatar && <RobotOutlined />}
             style={{

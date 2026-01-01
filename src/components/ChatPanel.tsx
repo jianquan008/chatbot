@@ -44,18 +44,40 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
   };
 
   return (
-    <Card 
-      title="与Iron对话" 
-      style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-      bodyStyle={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 0 }}
-    >
+    <>
+      <style>
+        {`
+          .chat-messages-container::-webkit-scrollbar {
+            width: 6px;
+          }
+          .chat-messages-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+          }
+          .chat-messages-container::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+          }
+          .chat-messages-container::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+          }
+        `}
+      </style>
+      <Card 
+        title="与Iron对话" 
+        style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        bodyStyle={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 0 }}
+      >
       {/* 消息列表 */}
       <div 
+        className="chat-messages-container"
         style={{ 
           flex: 1, 
-          overflowY: 'auto', 
+          overflowY: 'auto',
+          overflowX: 'hidden',
           padding: '16px',
-          maxHeight: '400px'
+          maxHeight: 'calc(100vh - 280px)',
+          minHeight: '400px'
         }}
       >
         <List
@@ -150,6 +172,7 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
         </Space.Compact>
       </div>
     </Card>
+    </>
   );
 };
 

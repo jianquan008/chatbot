@@ -13,10 +13,10 @@ export const useChat = (): UseChatReturn => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        const parsedMessages = JSON.parse(saved).map((msg: any) => ({
+        const parsedMessages = JSON.parse(saved).map((msg: Partial<Message>) => ({
           ...msg,
-          timestamp: new Date(msg.timestamp)
-        }));
+          timestamp: new Date(msg.timestamp || Date.now())
+        })) as Message[];
         setMessages(parsedMessages);
       } else {
         // 初始欢迎消息
