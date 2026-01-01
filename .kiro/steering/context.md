@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 把对话框的消息文字都改为黑色
+- **Feature 名称**: 把左侧快捷服务上面的小鹏Iron
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, Row, Col, Typography } from 'antd';
-import DigitalAssistant from './DigitalAssistant';
 import ChatPanel from './ChatPanel';
 import QuickServices from './QuickServices';
 import { useChat } from '../hooks/useChat';
@@ -98,12 +97,6 @@ const MainLayout: React.FC = () => {
               display: 'flex',
               flexDirection: 'column'
             }}>
-              <div style={{ flex: '0 0 auto', marginBottom: '24px' }}>
-                <DigitalAssistant 
-                  status={assistantStatus}
-                />
-              </div>
-              
               <div style={{ 
                 flex: '1 1 auto', 
                 display: 'flex',
