@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 把小鹏的Logo图片放小一些
+- **Feature 名称**: 把快捷服务变为下拉菜单选项
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto

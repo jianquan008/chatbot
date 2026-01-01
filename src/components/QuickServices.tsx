@@ -1,15 +1,14 @@
 import React from 'react';
-import { Card, Row, Col, Button, Typography } from 'antd';
+import { Card, Button, Typography, Dropdown, Space } from 'antd';
 import { 
   SearchOutlined, 
   MessageOutlined, 
   ToolOutlined, 
-  CalendarOutlined
+  CalendarOutlined,
+  DownOutlined
 } from '@ant-design/icons';
 import type { QuickServicesProps } from '../types';
 import { mockServices } from '../data/mockData';
-
-const { Title, Text } = Typography;
 
 // 图标映射
 const iconMap = {
@@ -20,6 +19,22 @@ const iconMap = {
 };
 
 const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {
+  const menuItems = mockServices.map((service) => ({
+    key: service.id,
+    label: (
+      <Space>
+        <span style={{ fontSize: '16px', color: '#1890ff' }}>
+          {iconMap[service.icon as keyof typeof iconMap]}
+        </span>
+        <div>
+          <div style={{ fontWeight: 500 }}>{service.name}</div>
+          <div style={{ fontSize: '12px', color: '#666' }}>{service.description}</div>
+        </div>
+      </Space>
+    ),
+    onClick: () => onServiceClick(service.id)
+  }));
+
   return (
     <Card 
       title="快捷服务" 
@@ -35,84 +50,26 @@ const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {
         padding: '16px'
       }}
     >
-      <Row gutter={[12, 12]} style={{ flex: 1 }}>
-        {mockServices.map((service) => (
-          <Col span={6} key={service.id}>
-            <Button
-              type="default"
-              size="large"
-              onClick={() => onServiceClick(service.id)}
-              style={{
-                width: '100%',
-                minHeight: '100px',
-                height: 'auto',
-                padding: '12px 8px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '1px solid #d9d9d9',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease',
-                whiteSpace: 'normal',
-                wordWrap: 'break-word'
-              }}
-              className="service-button"
-            >
-              <div 
-                style={{ 
-                  fontSize: '24px', 
-                  color: '#1890ff', 
-                  marginBottom: '8px' 
-                }}
-              >
-                {iconMap[service.icon as keyof typeof iconMap]}
-              </div>
-              
-              <Title 
-                level={5} 
-                style={{ 
-                  margin: 0, 
-                  fontSize: '14px',
-                  textAlign: 'center',
-                  lineHeight: '1.2'
-                }}
-              >
-                {service.name}
-              </Title>
-              
-              <Text 
-                type="secondary" 
-                style={{ 
-                  fontSize: '12px',
-                  textAlign: 'center',
-                  marginTop: '4px',
-                  lineHeight: '1.3',
-                  display: 'block',
-                  wordBreak: 'break-word',
-                  overflow: 'hidden'
-                }}
-              >
-                {service.description}
-              </Text>
-            </Button>
-          </Col>
-        ))}
-      </Row>
-
-      <style>
-        {`
-          .service-button:hover {
-            border-color: #1890ff !important;
-            box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2) !important;
-            transform: translateY(-2px);
-          }
-          
-          .service-button:active {
-            transform: translateY(0);
-          }
-        `}
-      </style>
+      <Dropdown
+        menu={{ items: menuItems }}
+        placement="bottomLeft"
+        trigger={['click']}
+      >
+        <Button 
+          type="primary" 
+          size="large"
+          style={{
+            width: '100%',
+            height: '48px',
+            fontSize: '16px'
+          }}
+        >
+          <Space>
+            选择服务
+            <DownOutlined />
+          </Space>
+        </Button>
+      </Dropdown>
     </Card>
   );
 };
