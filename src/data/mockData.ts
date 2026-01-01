@@ -36,18 +36,6 @@ export const mockServices: Service[] = [
     name: '预约服务',
     icon: 'CalendarOutlined',
     description: '预约线下服务或会议'
-  },
-  {
-    id: 'feedback',
-    name: '意见反馈',
-    icon: 'CommentOutlined',
-    description: '提交您的宝贵意见和建议'
-  },
-  {
-    id: 'contact',
-    name: '联系我们',
-    icon: 'PhoneOutlined',
-    description: '获取联系方式和客服支持'
   }
 ];
 

@@ -4,9 +4,7 @@ import {
   SearchOutlined, 
   MessageOutlined, 
   ToolOutlined, 
-  CalendarOutlined,
-  CommentOutlined,
-  PhoneOutlined
+  CalendarOutlined
 } from '@ant-design/icons';
 import type { QuickServicesProps } from '../types';
 import { mockServices } from '../data/mockData';
@@ -18,9 +16,7 @@ const iconMap = {
   SearchOutlined: <SearchOutlined />,
   MessageOutlined: <MessageOutlined />,
   ToolOutlined: <ToolOutlined />,
-  CalendarOutlined: <CalendarOutlined />,
-  CommentOutlined: <CommentOutlined />,
-  PhoneOutlined: <PhoneOutlined />
+  CalendarOutlined: <CalendarOutlined />
 };
 
 const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {

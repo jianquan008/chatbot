@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 对话输入框不需要滚动
+- **Feature 名称**: 我知道了
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto
