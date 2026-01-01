@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 对话内容文字加粗
+- **Feature 名称**: 对话内部文字改为红色
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto
@@ -24,6 +24,15 @@
 ## 代码分析工具（重要）
 
 这是一个已有项目。**使用以下工具理解代码**：
+
+### LSP 代码智能（推荐）
+LSP 已初始化，可使用 `code` 工具进行精确代码分析：
+- `code search_symbols "函数名"` - 搜索符号定义
+- `code goto_definition` - 跳转到定义
+- `code find_references` - 查找所有引用
+- `code diagnostics` - 获取编译错误
+
+**优先使用 code 工具**，它比 grep 更精确。
 
 ### Knowledge 索引（语义搜索）
 索引名称: `default_org-XPeng-Iron-admin`

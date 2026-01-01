@@ -95,7 +95,7 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
                     wordBreak: 'break-word'
                   }}
                 >
-                  <div style={{ whiteSpace: 'pre-wrap', fontWeight: 'bold' }}>
+                  <div style={{ whiteSpace: 'pre-wrap', fontWeight: 'bold', color: 'red' }}>
                     {message.content}
                   </div>
                   <div 
