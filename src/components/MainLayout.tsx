@@ -120,8 +120,8 @@ const MainLayout: React.FC = () => {
                   src="/xpeng-logo.png" 
                   alt="XPeng" 
                   style={{ 
-                    height: '64px',
-                    maxWidth: '200px',
+                    height: '40px',
+                    maxWidth: '120px',
                     objectFit: 'contain'
                   }} 
                 />

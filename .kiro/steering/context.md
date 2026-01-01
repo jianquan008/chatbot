@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 把小鹏的Logo图片放大一些
+- **Feature 名称**: 把小鹏的Logo图片放小一些
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto
