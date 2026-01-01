@@ -6,17 +6,17 @@
 
 | 目录 | 路径 | 用途 |
 |------|------|------|
-| 工作目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/XPeng-Iron/generated/admin` | 项目根目录 |
-| Spec目录 | `(不适用)` | requirements.md, design.md, tasks.md |
-| 参考文档 | `(不适用)` | 用户上传的参考文档（UI设计图、PRD等） |
-| 测试目录 | `(不适用)` | test-cases.md, test-report.md |
-| 日志目录 | `(不适用)` | workflow.log, summary.md |
+| 工作目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin` | 项目根目录 |
+| Spec目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/specs/project-init` | requirements.md, design.md, tasks.md |
+| 参考文档 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/specs/project-init/refs` | 用户上传的参考文档（UI设计图、PRD等） |
+| 测试目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/tests/project-init` | test-cases.md, test-report.md |
+| 日志目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/logs/project-init` | workflow.log, summary.md |
 
 ## 当前 Feature
 
-- **Feature 名称**: 把整个界面设置为居中
+- **Feature 名称**: project-init
 - **项目类型**: existing
-- **工作流模式**: quick
+- **工作流模式**: full
 - **执行模式**: auto
 
 **注意**：参考文档在当前 Feature 的 refs 目录下，不要读取其他 Feature 的文档。
@@ -35,12 +35,12 @@ LSP 已初始化，可使用 `code` 工具进行精确代码分析：
 **优先使用 code 工具**，它比 grep 更精确。
 
 ### Knowledge 索引（语义搜索）
-索引名称: `default_org-XPeng-Iron-admin`
-索引路径: `/Users/kb/devgenie-data/organizations/default_org/projects/XPeng-Iron/generated/admin`
+索引名称: `default_org-chatbot-admin`
+索引路径: `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin`
 
 使用 `knowledge` 工具：
 1. 先用 `knowledge show` 检查索引是否存在
-2. 如果没有 "default_org-XPeng-Iron-admin"，用 `knowledge add` 建立索引
+2. 如果没有 "default_org-chatbot-admin"，用 `knowledge add` 建立索引
 3. 用 `knowledge search` 进行语义搜索
 
 ### 代码探索工具

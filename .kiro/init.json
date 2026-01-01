@@ -1,12 +1,18 @@
 {
+  "initialized_at": "2026-01-01T21:14:31.134943",
   "version": "0.8.9",
-  "last_synced_at": "2026-01-01T17:29:50.643117",
   "components": {
     "agents": {
-      "synced_at": "2026-01-01T17:29:50.643117"
+      "files": [],
+      "synced_at": null
     },
     "steering": {
-      "synced_at": "2026-01-01T17:29:50.643117"
+      "files": [],
+      "synced_at": null
+    },
+    "templates": {
+      "categories": [],
+      "synced_at": null
     }
   }
 }
