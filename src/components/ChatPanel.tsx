@@ -102,14 +102,14 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
                   size="small"
                   icon={message.type === 'user' ? <UserOutlined /> : <RobotOutlined />}
                   style={{
-                    backgroundColor: message.type === 'user' ? '#1890ff' : '#52c41a',
+                    backgroundColor: message.type === 'user' ? '#87ceeb' : '#52c41a',
                     margin: message.type === 'user' ? '0 0 0 8px' : '0 8px 0 0'
                   }}
                 />
                 
                 <div
                   style={{
-                    backgroundColor: message.type === 'user' ? '#1890ff' : '#f6f6f6',
+                    backgroundColor: message.type === 'user' ? '#b0e0e6' : '#f6f6f6',
                     color: message.type === 'user' ? 'white' : '#333',
                     padding: '8px 12px',
                     borderRadius: '12px',

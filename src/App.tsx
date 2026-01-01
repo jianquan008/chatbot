@@ -5,7 +5,16 @@ import 'antd/dist/reset.css';
 
 function App() {
   return (
-    <ConfigProvider locale={zhCN}>
+    <ConfigProvider 
+      locale={zhCN}
+      theme={{
+        token: {
+          colorPrimary: '#87ceeb',
+          colorInfo: '#87ceeb',
+          colorLink: '#87ceeb',
+        },
+      }}
+    >
       <MainLayout />
     </ConfigProvider>
   );

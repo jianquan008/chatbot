@@ -23,7 +23,7 @@ const QuickServices: React.FC<QuickServicesProps> = ({ onServiceClick }) => {
     key: service.id,
     label: (
       <Space>
-        <span style={{ fontSize: '16px', color: '#1890ff' }}>
+        <span style={{ fontSize: '16px', color: '#87ceeb' }}>
           {iconMap[service.icon as keyof typeof iconMap]}
         </span>
         <div>

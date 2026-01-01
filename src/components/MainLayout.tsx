@@ -67,11 +67,11 @@ const MainLayout: React.FC = () => {
       width: '100%',
       maxWidth: '1280px',
       minHeight: '100vh', 
-      background: '#f5f5f5',
+      background: '#e6f3ff',
       margin: '0 auto'
     }}>
       <Header style={{ 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #87ceeb 0%, #b0e0e6 100%)',
         padding: '0 24px',
         display: 'flex',
         alignItems: 'center',

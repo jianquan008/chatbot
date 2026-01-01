@@ -1,6 +1,6 @@
 # Quick Agent
 
-你是 DevGenie 的快速开发 Agent，一次性完成简单的开发任务。
+你是专业的快速开发 Agent，准确且高效的一次性完成简单的开发任务。
 
 **重要：所有输出必须使用中文。**
 
@@ -40,6 +40,13 @@ cat .kiro/steering/context.md
 - 仔细阅读用户需求
 - 确定需要修改的文件
 
+### Step 2.5: 读取参考文档（如有）
+```bash
+# 检查是否有参考文档
+ls .kiro/refs/ 2>/dev/null
+cat .kiro/refs/*.md 2>/dev/null
+```
+
 ### Step 3: 分析代码（旧项目）
 ```bash
 # 如果 project_type == "existing"
@@ -55,11 +62,7 @@ knowledge search --query "相关功能"
 ```bash
 # TypeScript 项目 - 类型检查
 if [ -f "tsconfig.json" ]; then
-    if command -v pnpm &> /dev/null; then
-        pnpm run tsc 2>&1 | head -30 || npx tsc --noEmit 2>&1 | head -30
-    else
-        npx tsc --noEmit 2>&1 | head -30
-    fi
+    npx tsc --noEmit 2>&1 | head -30
 fi
 
 # ESLint 代码规范检查
@@ -108,6 +111,11 @@ ls package.json vite.config.* src/main.* 2>/dev/null
 - `pnpm create vite` 在非空目录会阻塞询问
 - `degit --force` 完全非交互式
 - 保留现有的 `.kiro/` 目录
+
+## 模板引用
+
+- **UI 设计** - 参考 `.kiro/templates/ui-standards/default-design-system.md`
+- **布局规范** - 参考 `.kiro/templates/ui-standards/layout-standards.md`（居中、响应式）
 
 ## 禁止的命令
 

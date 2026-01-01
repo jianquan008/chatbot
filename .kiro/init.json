@@ -4,15 +4,31 @@
   "components": {
     "agents": {
       "files": [],
-      "synced_at": null
+      "synced_at": "2026-01-01T21:46:26.528747"
     },
     "steering": {
       "files": [],
-      "synced_at": null
+      "synced_at": "2026-01-01T21:46:26.528747"
     },
     "templates": {
       "categories": [],
       "synced_at": null
+    },
+    "ui-standards": {
+      "synced_at": "2026-01-01T21:46:26.528747"
+    },
+    "specs": {
+      "synced_at": "2026-01-01T21:46:26.528747"
+    },
+    "testing": {
+      "synced_at": "2026-01-01T21:46:26.528747"
+    },
+    "security": {
+      "synced_at": "2026-01-01T21:46:26.528747"
+    },
+    "scaffolds": {
+      "synced_at": "2026-01-01T21:46:26.528747"
     }
-  }
+  },
+  "last_synced_at": "2026-01-01T21:46:26.528747"
 }

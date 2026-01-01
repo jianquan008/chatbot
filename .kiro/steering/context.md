@@ -7,16 +7,16 @@
 | 目录 | 路径 | 用途 |
 |------|------|------|
 | 工作目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin` | 项目根目录 |
-| Spec目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/specs/project-init` | requirements.md, design.md, tasks.md |
-| 参考文档 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/specs/project-init/refs` | 用户上传的参考文档（UI设计图、PRD等） |
-| 测试目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/tests/project-init` | test-cases.md, test-report.md |
-| 日志目录 | `/Users/kb/devgenie-data/organizations/default_org/projects/chatbot/generated/admin/.kiro/logs/project-init` | workflow.log, summary.md |
+| Spec目录 | `(不适用)` | requirements.md, design.md, tasks.md |
+| 参考文档 | `(不适用)` | 用户上传的参考文档（UI设计图、PRD等） |
+| 测试目录 | `(不适用)` | test-cases.md, test-report.md |
+| 日志目录 | `(不适用)` | workflow.log, summary.md |
 
 ## 当前 Feature
 
-- **Feature 名称**: project-init
+- **Feature 名称**: 把整体风格的颜色改为浅蓝色
 - **项目类型**: existing
-- **工作流模式**: full
+- **工作流模式**: quick
 - **执行模式**: auto
 
 **注意**：参考文档在当前 Feature 的 refs 目录下，不要读取其他 Feature 的文档。
