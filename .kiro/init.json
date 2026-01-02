@@ -1,34 +1,18 @@
 {
-  "initialized_at": "2026-01-01T21:14:31.134943",
-  "version": "0.8.9",
+  "initialized_at": "2026-01-02T17:24:21.784656",
+  "version": "0.9.2",
   "components": {
     "agents": {
       "files": [],
-      "synced_at": "2026-01-01T21:46:26.528747"
+      "synced_at": null
     },
     "steering": {
       "files": [],
-      "synced_at": "2026-01-01T21:46:26.528747"
+      "synced_at": null
     },
     "templates": {
       "categories": [],
       "synced_at": null
-    },
-    "ui-standards": {
-      "synced_at": "2026-01-01T21:46:26.528747"
-    },
-    "specs": {
-      "synced_at": "2026-01-01T21:46:26.528747"
-    },
-    "testing": {
-      "synced_at": "2026-01-01T21:46:26.528747"
-    },
-    "security": {
-      "synced_at": "2026-01-01T21:46:26.528747"
-    },
-    "scaffolds": {
-      "synced_at": "2026-01-01T21:46:26.528747"
     }
-  },
-  "last_synced_at": "2026-01-01T21:46:26.528747"
+  }
 }

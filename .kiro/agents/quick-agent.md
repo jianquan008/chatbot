@@ -41,11 +41,23 @@ cat .kiro/steering/context.md
 - 确定需要修改的文件
 
 ### Step 2.5: 读取参考文档（如有）
+
+从 `context.md` 获取参考文档路径：
+- **有 spec_dir**：参考文档在 `{spec_dir}/refs/`（选中 Feature 时）
+- **无 spec_dir**：参考文档在 `.kiro/refs/`（项目级别）
+
 ```bash
-# 检查是否有参考文档
+# 根据 context.md 中的配置读取
+# 如果 spec_dir 存在（选中了 Feature）
+ls {spec_dir}/refs/ 2>/dev/null
+cat {spec_dir}/refs/*.md 2>/dev/null
+
+# 如果 spec_dir 为空或不适用（新需求）
 ls .kiro/refs/ 2>/dev/null
 cat .kiro/refs/*.md 2>/dev/null
 ```
+
+**图片文档**：如果有 `.png`/`.jpg` 图片，使用 `fs_read` 的 Image 模式读取。
 
 ### Step 3: 分析代码（旧项目）
 ```bash
@@ -57,6 +69,45 @@ knowledge search --query "相关功能"
 ### Step 4: 实现修改
 - 使用 `fs_write` 修改文件
 - 遵循现有代码风格
+- **如果涉及 API 调用，必须使用 Mock 数据**（除非项目已有真实后端）
+
+#### 读取 UI 规范（涉及 UI 修改时）
+
+**如果需求涉及 UI 修改，先读取设计规范：**
+```bash
+cat .kiro/templates/ui-standards/default-design-system.md
+```
+
+**布局模式选择：**
+| 应用类型 | 布局模式 | 特点 |
+|----------|----------|------|
+| 管理后台/列表 | `full-width` | 全宽，不限制 max-width |
+| 游戏/工具 | `centered` | 居中，固定尺寸 |
+| 表单 | `form` | 居中，限宽 480px |
+
+#### API Mock 快速实现
+
+如果需要添加 API 相关功能，使用以下模式：
+
+```typescript
+// 简单 Mock：直接在组件/Hook 中使用静态数据
+const mockUsers = [
+  { id: 1, name: "张三" },
+  { id: 2, name: "李四" }
+];
+
+// 或使用 localStorage 持久化
+const getUsers = () => {
+  const data = localStorage.getItem('users');
+  return data ? JSON.parse(data) : mockUsers;
+};
+
+const saveUsers = (users: User[]) => {
+  localStorage.setItem('users', JSON.stringify(users));
+};
+```
+
+**确保 Mock 数据足够支持功能验证！**
 
 ### Step 5: 验证
 ```bash
@@ -115,7 +166,7 @@ ls package.json vite.config.* src/main.* 2>/dev/null
 ## 模板引用
 
 - **UI 设计** - 参考 `.kiro/templates/ui-standards/default-design-system.md`
-- **布局规范** - 参考 `.kiro/templates/ui-standards/layout-standards.md`（居中、响应式）
+
 
 ## 禁止的命令
 

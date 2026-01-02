@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 const MainLayout: React.FC = () => {
   const { messages, sendMessage, loading } = useChat();
-  const [assistantStatus, setAssistantStatus] = useState<AssistantStatus>('idle');
+  const [, setAssistantStatus] = useState<AssistantStatus>('idle');
 
   // 根据loading状态更新数字人状态
   useEffect(() => {
