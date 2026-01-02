@@ -14,7 +14,7 @@
 
 ## 当前 Feature
 
-- **Feature 名称**: 启动项目
+- **Feature 名称**: 把项目启动
 - **项目类型**: existing
 - **工作流模式**: quick
 - **执行模式**: auto
