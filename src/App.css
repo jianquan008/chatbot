@@ -1,46 +1,139 @@
+/* App 根容器 - 使用设计系统布局 */
 #root {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #87ceebaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+/* 卡片组件 */
 .card {
-  padding: 2em;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-6);
+  border: 1px solid var(--border-default);
 }
 
-.read-the-docs {
-  color: #888;
+.card-header {
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--border-default);
+  margin-bottom: var(--spacing-4);
+}
+
+.card-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  height: 40px;
+  padding: 0 var(--spacing-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-inverse);
+  background: var(--primary-500);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background: var(--primary-600);
+}
+.btn-primary:disabled {
+  background: var(--gray-300);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  height: 40px;
+  padding: 0 var(--spacing-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--gray-700);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  background: var(--gray-50);
+  border-color: var(--border-hover);
+}
+
+/* 输入框样式 */
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--spacing-3);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input::placeholder {
+  color: var(--text-tertiary);
+}
+.input:hover {
+  border-color: var(--border-hover);
+}
+.input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* 表单组 */
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+}
+
+/* 列表容器 */
+.list-container {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-default);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.2s;
+}
+
+.list-item:hover {
+  background: var(--bg-secondary);
+}
+
+.list-item:last-child {
+  border-bottom: none;
 }

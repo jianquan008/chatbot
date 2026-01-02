@@ -66,30 +66,31 @@ const MainLayout: React.FC = () => {
       width: '100%',
       maxWidth: '1280px',
       minHeight: '100vh', 
-      background: '#e6f3ff',
+      background: 'var(--bg-secondary)',
       margin: '0 auto'
     }}>
       <Header style={{ 
-        background: 'linear-gradient(135deg, #87ceeb 0%, #b0e0e6 100%)',
-        padding: '0 24px',
+        background: 'linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%)',
+        padding: '0 var(--spacing-6)',
         display: 'flex',
         alignItems: 'center',
-        height: '64px'
+        height: '64px',
+        boxShadow: 'var(--shadow-sm)'
       }}>
         <Title 
           level={2} 
           style={{ 
-            color: 'white', 
+            color: 'var(--text-inverse)', 
             margin: 0,
-            fontWeight: 'bold',
-            fontSize: '24px'
+            fontWeight: 'var(--font-bold)',
+            fontSize: 'var(--text-2xl)'
           }}
         >
           小鹏Iron数字助手平台
         </Title>
       </Header>
 
-      <Content style={{ padding: '24px' }}>
+      <Content style={{ padding: 'var(--spacing-6)' }}>
         <Row gutter={[24, 24]} style={{ height: 'calc(100vh - 112px)' }}>
           <Col span={8}>
             <div style={{ 
@@ -108,12 +109,13 @@ const MainLayout: React.FC = () => {
               {/* XPeng Logo */}
               <div style={{ 
                 flex: '0 0 auto',
-                marginTop: '16px',
-                padding: '16px',
+                marginTop: 'var(--spacing-4)',
+                padding: 'var(--spacing-4)',
                 textAlign: 'center',
-                backgroundColor: 'white',
-                borderRadius: '8px',
-                border: '1px solid #f0f0f0'
+                backgroundColor: 'var(--bg-primary)',
+                borderRadius: 'var(--radius-lg)',
+                border: '1px solid var(--border-default)',
+                boxShadow: 'var(--shadow-sm)'
               }}>
                 <img 
                   src="/xpeng-logo.png" 
